@@ -1,1 +1,1 @@
-# pudato-core
+# RAG Example
