@@ -18,7 +18,7 @@ vectorstore = PGVector(
     use_jsonb=True,
 )
 
-query = "Cuáles son los derechos fundamentales"
+query = "Nacionalidad chilena"
 
 results = vectorstore.similarity_search(query, k=10)
 context = ""
