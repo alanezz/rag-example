@@ -18,7 +18,7 @@ vectorstore = PGVector(
     use_jsonb=True,
 )
 
-query = "Cómo se cambia la constitución"
+query = "Cuáles son los derechos fundamentales"
 
 results = vectorstore.similarity_search(query, k=10)
 context = ""

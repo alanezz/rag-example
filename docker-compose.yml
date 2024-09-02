@@ -10,6 +10,7 @@ services:
         condition: service_healthy
     volumes:
       - .:/app/
+      - model_cache:/root/.cache/huggingface
 
   db:
     image: ankane/pgvector
@@ -25,5 +26,6 @@ services:
 
 volumes:
   postgres_data:
+  model_cache:
 
 
