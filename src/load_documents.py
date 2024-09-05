@@ -4,6 +4,11 @@ from langchain_text_splitters.character import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders.pdf import PDFPlumberLoader
 from langchain_postgres import PGVector
 
+from db_config import (
+    db_user, db_password, db_database,
+    db_host, db_port
+)
+
 embeddings = HuggingFaceEmbeddings(
     model_name="intfloat/multilingual-e5-base"
 )
@@ -13,7 +18,7 @@ splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(tokenizer, 
 pdf_loader = PDFPlumberLoader('data/constitucion.pdf')
 chunks = pdf_loader.load_and_split(splitter)
 
-connection = "postgresql+psycopg://user_pudato:password_pudato@db:5432/db_pudato"
+connection = f"postgresql+psycopg://{db_user}:{db_password}@{db_host}:{db_port}/{db_database}"
 collection_name = "constitution"
 
 documents = [

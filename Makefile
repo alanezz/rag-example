@@ -7,6 +7,9 @@ up:
 load-documents:
 	docker compose run --rm app poetry run python src/load_documents.py
 
+search:
+	docker compose run --rm app poetry run python src/search.py
+
 rag:
 	docker compose run --rm app poetry run python src/rag_example.py
 
