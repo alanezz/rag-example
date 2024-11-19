@@ -92,7 +92,7 @@ profile_default/
 ipython_config.py
 
 # poetry
-poetry.lock
+# poetry.lock
 
 # pdm
 .pdm.toml
